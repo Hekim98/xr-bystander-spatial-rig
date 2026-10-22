@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <radialGradient id="lobeGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.12"/>
+    </radialGradient>
+  </defs>
+  <rect width="960" height="440" rx="16" fill="url(#bgGrad)" stroke="#1e293b" stroke-width="2"/>
+  
+  <!-- Left Panel: 360° Polar Directivity & Bystander Rejection Map -->
+  <text x="245" y="42" fill="#f8fafc" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" text-anchor="middle">360° Bystander Polar Rejection Map (Zaber X-RSW60A)</text>
+  <text x="245" y="64" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle">12 Azimuth Angles (0°–330°) × 3 Radial Zones (1.5 ft / 3.0 ft / 4.5 ft)</text>
+
+  <g transform="translate(245, 242)">
+    <!-- Radial Distance Rings -->
+    <circle r="140" fill="none" stroke="#334155" stroke-width="1.2" stroke-dasharray="4,4"/>
+    <circle r="100" fill="none" stroke="#334155" stroke-width="1.2" stroke-dasharray="4,4"/>
+    <circle r="60" fill="none" stroke="#334155" stroke-width="1.2" stroke-dasharray="4,4"/>
+    <circle r="22" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+
+    <!-- 30° Azimuth Spokes -->
+    <line x1="0" y1="-150" x2="0" y2="150" stroke="#1e293b" stroke-width="1"/>
+    <line x1="-150" y1="0" x2="150" y2="0" stroke="#1e293b" stroke-width="1"/>
+    <line x1="-130" y1="-75" x2="130" y2="75" stroke="#1e293b" stroke-width="1"/>
+    <line x1="-130" y1="75" x2="130" y2="-75" stroke="#1e293b" stroke-width="1"/>
+    <line x1="-75" y1="-130" x2="75" y2="130" stroke="#1e293b" stroke-width="1"/>
+    <line x1="-75" y1="130" x2="75" y2="-130" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Cardioid Forward Beamforming Acceptance Lobe vs Bystander Rejection Envelope -->
+    <polygon points="0,-132 32,-92 48,-42 42,0 35,32 22,52 0,58 -22,52 -35,32 -42,0 -48,-42 -32,-92" fill="url(#lobeGrad)" stroke="#38bdf8" stroke-width="2.5"/>
+    <!-- 3.0 ft Bystander Rejection Contour -->
+    <polygon points="0,-46 18,-36 24,-18 20,0 16,16 12,24 0,26 -12,24 -16,16 -20,0 -24,-18 -18,-36" fill="rgba(16, 185, 129, 0.22)" stroke="#10b981" stroke-width="2"/>
+
+    <!-- Angle Labels -->
+    <text x="0" y="-156" fill="#38bdf8" font-family="monospace" font-size="12" font-weight="700" text-anchor="middle">0° (Front)</text>
+    <text x="82" y="-136" fill="#94a3b8" font-family="monospace" font-size="11" text-anchor="middle">30°</text>
+    <text x="142" y="-76" fill="#94a3b8" font-family="monospace" font-size="11" text-anchor="start">60°</text>
+    <text x="158" y="4" fill="#cbd5e1" font-family="monospace" font-size="11" font-weight="700" text-anchor="start">90° (Right)</text>
+    <text x="142" y="84" fill="#94a3b8" font-family="monospace" font-size="11" text-anchor="start">120°</text>
+    <text x="82" y="146" fill="#94a3b8" font-family="monospace" font-size="11" text-anchor="middle">150°</text>
+    <text x="0" y="168" fill="#cbd5e1" font-family="monospace" font-size="11" font-weight="700" text-anchor="middle">180° (Rear)</text>
+    <text x="-82" y="146" fill="#94a3b8" font-family="monospace" font-size="11" text-anchor="middle">210°</text>
+    <text x="-142" y="84" fill="#94a3b8" font-family="monospace" font-size="11" text-anchor="end">240°</text>
+    <text x="-158" y="4" fill="#cbd5e1" font-family="monospace" font-size="11" font-weight="700" text-anchor="end">270° (Left)</text>
+    <text x="-142" y="-76" fill="#94a3b8" font-family="monospace" font-size="11" text-anchor="end">300°</text>
+    <text x="-82" y="-136" fill="#94a3b8" font-family="monospace" font-size="11" text-anchor="middle">330°</text>
+
+    <!-- Distance Ring Labels -->
+    <text x="6" y="-56" fill="#64748b" font-family="monospace" font-size="9">1.5 ft</text>
+    <text x="6" y="-96" fill="#64748b" font-family="monospace" font-size="9">3.0 ft</text>
+    <text x="6" y="-135" fill="#64748b" font-family="monospace" font-size="9">4.5 ft</text>
+  </g>
+
+  <!-- Right Panel: Automated Hardware-in-the-Loop Architecture -->
+  <g transform="translate(505, 36)">
+    <rect x="0" y="0" width="420" height="368" rx="12" fill="#111827" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="24" y="34" fill="#f8fafc" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="700">Automated 360° Bystander Rig Pipeline</text>
+
+    <!-- Step 1 -->
+    <rect x="24" y="54" width="372" height="64" rx="8" fill="#1e293b" stroke="#0284c7" stroke-width="1.2"/>
+    <text x="40" y="78" fill="#38bdf8" font-family="monospace" font-size="12" font-weight="700">1. ZABER X-RSW60A ROTARY POSITIONING</text>
+    <text x="40" y="98" fill="#cbd5e1" font-family="system-ui, -apple-system, sans-serif" font-size="12">Auto-rotates 0° → 330° (30° steps) via Python SDK or WebSerial</text>
+
+    <!-- Step 2 -->
+    <rect x="24" y="132" width="372" height="64" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.2"/>
+    <text x="40" y="156" fill="#a78bfa" font-family="monospace" font-size="12" font-weight="700">2. RADIAL BYSTANDER SPEECH STIMULUS</text>
+    <text x="40" y="176" fill="#cbd5e1" font-family="system-ui, -apple-system, sans-serif" font-size="12">1.5 ft, 3.0 ft, 4.5 ft × Conversational &amp; Loud Vocal Effort</text>
+
+    <!-- Step 3 -->
+    <rect x="24" y="210" width="372" height="64" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.2"/>
+    <text x="40" y="234" fill="#34d399" font-family="monospace" font-size="12" font-weight="700">3. MULTI-ASSISTANT WAKE-WORD CLASSIFICATION</text>
+    <text x="40" y="254" fill="#cbd5e1" font-family="system-ui, -apple-system, sans-serif" font-size="12">Logs Stayed Asleep (CR) vs Activated-No-Answer / Answered (FA)</text>
+
+    <!-- Step 4 -->
+    <rect x="24" y="288" width="372" height="62" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.2"/>
+    <text x="40" y="312" fill="#fbbf24" font-family="monospace" font-size="12" font-weight="700">4. POLAR DIRECTIVITY &amp; FAR REPORT GENERATION</text>
+    <text x="40" y="332" fill="#cbd5e1" font-family="system-ui, -apple-system, sans-serif" font-size="12">Exports 216-trial CSV/JSON + Interactive Polar HTML Dashboard</text>
+  </g>
+</svg>
